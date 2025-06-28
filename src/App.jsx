@@ -1,21 +1,22 @@
-import PropTypes from 'prop-types';
 import { useState } from 'react';
+import styles from './App.module.css';
 
-const Product = ({ name, price, amount }) => {
-	// const [amount, setAmount] = useState(initialAmount);
-
+const Counter = ({ value, setValue }) => {
 	return (
 		<>
-			<div>
-				{name} - {price} руб
-			</div>
-			<div>Количество: {amount}</div>
-			<Basket amount={amount} />
+			<div>{value}</div>
+			<button onClick={() => setValue(value + 1)}>+1</button>
 		</>
 	);
 };
 
-Product.PropTypes = {
-	name: PropTypes.string,
-	price: PropTypes.number,
+export const App = () => {
+	const [value, setValue] = useState(0);
+
+	return (
+		<div className={StyleSheet.app}>
+			<label>Счётчик:</label>
+			<Counter value={value} setValue={setValue} />
+		</div>
+	);
 };
