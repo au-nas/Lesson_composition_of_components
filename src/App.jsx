@@ -14,7 +14,7 @@ export const App = () => {
 	const [value, setValue] = useState(0);
 
 	return (
-		<div className={StyleSheet.app}>
+		<div className={styles.app}>
 			<label>Счётчик:</label>
 			<Counter value={value} setValue={setValue} />
 		</div>
